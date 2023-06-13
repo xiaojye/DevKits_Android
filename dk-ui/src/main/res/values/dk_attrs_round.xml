@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 是否将圆角设置为圆形 -->
+    <attr name="dk_round_isCircle" format="boolean" />
+
+    <declare-styleable name="RARound">
+        <attr name="dk_borderColor" />
+        <attr name="dk_borderWidth" />
+        <attr name="dk_cornerRadius" />
+        <attr name="dk_cornerRadiusTopLeft" />
+        <attr name="dk_cornerRadiusTopRight" />
+        <attr name="dk_cornerRadiusBottomLeft" />
+        <attr name="dk_cornerRadiusBottomRight" />
+        <attr name="dk_round_isCircle" />
+    </declare-styleable>
+
+    <declare-styleable name="DkRoundFrameLayout">
+        <attr name="dk_borderColor" />
+        <attr name="dk_borderWidth" />
+        <attr name="dk_cornerRadius" />
+        <attr name="dk_cornerRadiusTopLeft" />
+        <attr name="dk_cornerRadiusTopRight" />
+        <attr name="dk_cornerRadiusBottomLeft" />
+        <attr name="dk_cornerRadiusBottomRight" />
+        <attr name="dk_round_isCircle" />
+    </declare-styleable>
+
+    <declare-styleable name="DkRoundLinearLayout">
+        <attr name="dk_borderColor" />
+        <attr name="dk_borderWidth" />
+        <attr name="dk_cornerRadius" />
+        <attr name="dk_cornerRadiusTopLeft" />
+        <attr name="dk_cornerRadiusTopRight" />
+        <attr name="dk_cornerRadiusBottomLeft" />
+        <attr name="dk_cornerRadiusBottomRight" />
+        <attr name="dk_round_isCircle" />
+    </declare-styleable>
+
+    <declare-styleable name="DkRoundRelativeLayout">
+        <attr name="dk_borderColor" />
+        <attr name="dk_borderWidth" />
+        <attr name="dk_cornerRadius" />
+        <attr name="dk_cornerRadiusTopLeft" />
+        <attr name="dk_cornerRadiusTopRight" />
+        <attr name="dk_cornerRadiusBottomLeft" />
+        <attr name="dk_cornerRadiusBottomRight" />
+        <attr name="dk_round_isCircle" />
+    </declare-styleable>
+
+    <declare-styleable name="DkRoundView">
+        <attr name="dk_borderColor" />
+        <attr name="dk_borderWidth" />
+        <attr name="dk_cornerRadius" />
+        <attr name="dk_cornerRadiusTopLeft" />
+        <attr name="dk_cornerRadiusTopRight" />
+        <attr name="dk_cornerRadiusBottomLeft" />
+        <attr name="dk_cornerRadiusBottomRight" />
+        <attr name="dk_round_isCircle" />
+    </declare-styleable>
+
+    <declare-styleable name="DkRoundImageView">
+        <attr name="dk_borderColor" />
+        <attr name="dk_borderWidth" />
+        <attr name="dk_cornerRadius" />
+        <attr name="dk_cornerRadiusTopLeft" />
+        <attr name="dk_cornerRadiusTopRight" />
+        <attr name="dk_cornerRadiusBottomLeft" />
+        <attr name="dk_cornerRadiusBottomRight" />
+        <attr name="dk_round_isCircle" />
+    </declare-styleable>
+
+    <declare-styleable name="DkRoundTextView">
+        <attr name="dk_borderColor" />
+        <attr name="dk_borderWidth" />
+        <attr name="dk_cornerRadius" />
+        <attr name="dk_cornerRadiusTopLeft" />
+        <attr name="dk_cornerRadiusTopRight" />
+        <attr name="dk_cornerRadiusBottomLeft" />
+        <attr name="dk_cornerRadiusBottomRight" />
+        <attr name="dk_round_isCircle" />
+    </declare-styleable>
+
+</resources>
