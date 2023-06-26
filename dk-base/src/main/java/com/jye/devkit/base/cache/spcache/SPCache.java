@@ -23,13 +23,13 @@ import java.util.Map;
  */
 public class SPCache implements DkCache {
 
-    private SharedPreferences mSharedPreferences;
+    private final SharedPreferences mSharedPreferences;
 
     public SPCache(@NonNull SharedPreferences sharedPreferences) {
         this.mSharedPreferences = sharedPreferences;
     }
 
-    @Nullable
+    @NonNull
     @Override
     public ValueWrapper get(String key) {
         String data = mSharedPreferences.getString(key, null);
@@ -49,27 +49,7 @@ public class SPCache implements DkCache {
             }
             return new SPValueWrapper(data);
         }
-        return null;
-    }
-
-    public int getInt(String key, int defValue) {
-        return mSharedPreferences.getInt(key, defValue);
-    }
-
-    public long getLong(String key, long defValue) {
-        return mSharedPreferences.getLong(key, defValue);
-    }
-
-    public float getFloat(String key, float defValue) {
-        return mSharedPreferences.getFloat(key, defValue);
-    }
-
-    public boolean getBoolean(String key, boolean defValue) {
-        return mSharedPreferences.getBoolean(key, defValue);
-    }
-
-    public String getString(String key, String defValue) {
-        return mSharedPreferences.getString(key, defValue);
+        return new SPValueWrapper(null);
     }
 
     @Override
@@ -82,26 +62,6 @@ public class SPCache implements DkCache {
         SaveModel saveModel = new SaveModel(value, ttl);
         String json = DkJson.toJsonString(saveModel);
         mSharedPreferences.edit().putString(key, json).apply();
-    }
-
-    public void put(String key, int value) {
-        mSharedPreferences.edit().putInt(key, value).apply();
-    }
-
-    public void put(String key, long value) {
-        mSharedPreferences.edit().putLong(key, value).apply();
-    }
-
-    public void put(String key, float value) {
-        mSharedPreferences.edit().putFloat(key, value).apply();
-    }
-
-    public void put(String key, boolean value) {
-        mSharedPreferences.edit().putBoolean(key, value).apply();
-    }
-
-    public void put(String key, String value) {
-        mSharedPreferences.edit().putString(key, value).apply();
     }
 
     @Override

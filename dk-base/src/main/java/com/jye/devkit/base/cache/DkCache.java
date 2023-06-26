@@ -1,5 +1,6 @@
 package com.jye.devkit.base.cache;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.gson.JsonParseException;
@@ -14,7 +15,7 @@ import java.util.Map;
  */
 public interface DkCache {
 
-    @Nullable
+    @NonNull
     ValueWrapper get(String key);
 
     void put(String key, @Nullable Object value);
@@ -49,27 +50,31 @@ public interface DkCache {
 
         public abstract boolean asBoolean(boolean defValue);
 
-        @Nullable
-        public abstract String asString(@Nullable String defValue);
+        @NonNull
+        public abstract String asString(@NonNull String defValue);
 
         @Nullable
         public <T> T asObject(Class<T> clz) {
-            String json = asString(null);
-            try {
-                return DkJson.parseObject(json, clz);
-            } catch (JsonParseException e) {
-                e.printStackTrace();
+            String json = asString("");
+            if (!json.isEmpty()) {
+                try {
+                    return DkJson.parseObject(json, clz);
+                } catch (JsonParseException e) {
+                    e.printStackTrace();
+                }
             }
             return null;
         }
 
         @Nullable
         public <T> List<T> asList(Class<T> clz) {
-            String json = asString(null);
-            try {
-                return DkJson.parseArray(json, clz);
-            } catch (JsonParseException e) {
-                e.printStackTrace();
+            String json = asString("");
+            if (!json.isEmpty()) {
+                try {
+                    return DkJson.parseArray(json, clz);
+                } catch (JsonParseException e) {
+                    e.printStackTrace();
+                }
             }
             return null;
         }

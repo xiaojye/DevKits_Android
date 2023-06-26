@@ -1,8 +1,10 @@
 package com.jye.devkit.base.cache.spcache;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.jye.devkit.base.cache.DkCache;
+
 
 /**
  * @author jye
@@ -16,8 +18,8 @@ public class SPValueWrapper extends DkCache.ValueWrapper {
 
     @Override
     public int asInt(int defValue) {
-        String value = asString(null);
-        if (value != null) {
+        String value = asString("");
+        if (!value.isEmpty()) {
             return Integer.parseInt(value);
         }
         return defValue;
@@ -25,8 +27,8 @@ public class SPValueWrapper extends DkCache.ValueWrapper {
 
     @Override
     public long asLong(long defValue) {
-        String value = asString(null);
-        if (value != null) {
+        String value = asString("");
+        if (!value.isEmpty()) {
             return Long.parseLong(value);
         }
         return defValue;
@@ -34,8 +36,8 @@ public class SPValueWrapper extends DkCache.ValueWrapper {
 
     @Override
     public float asFloat(float defValue) {
-        String value = asString(null);
-        if (value != null) {
+        String value = asString("");
+        if (!value.isEmpty()) {
             return Float.parseFloat(value);
         }
         return defValue;
@@ -43,16 +45,16 @@ public class SPValueWrapper extends DkCache.ValueWrapper {
 
     @Override
     public boolean asBoolean(boolean defValue) {
-        String value = asString(null);
-        if (value != null) {
+        String value = asString("");
+        if (!value.isEmpty()) {
             return Boolean.parseBoolean(value);
         }
         return defValue;
     }
 
-    @Nullable
+    @NonNull
     @Override
-    public String asString(@Nullable String defValue) {
+    public String asString(@NonNull String defValue) {
         return value != null ? value.toString() : defValue;
     }
 }
